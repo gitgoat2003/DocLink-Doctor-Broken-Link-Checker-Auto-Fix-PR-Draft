@@ -1,0 +1,56 @@
+# Scan options
+scan:
+  recursive: true
+  follow_symlinks: false
+  max_depth: 10
+  file_patterns:
+    - "*.md"
+    - "*.markdown"
+    - "README"
+  exclude_patterns:
+    - "node_modules/**"
+    - "vendor/**"
+    - ".git/**"
+
+# HTTP checking
+http:
+  timeout_seconds: 10
+  max_redirects: 5
+  user_agent: "DocLink-Doctor/1.0"
+  retry_attempts: 3
+  retry_delay_ms: 1000
+  rate_limit_per_domain: 10
+  verify_ssl: true
+
+# Link validation
+validation:
+  check_anchors: true
+  check_fragments: true
+  allow_relative_links: true
+
+# Auto-fix
+autofix:
+  enabled: true
+  create_backup: true
+  confidence_threshold: 0.8
+  fixes:
+    http_to_https: true
+    trailing_slashes: true
+    case_corrections: true
+    redirect_resolution: true
+
+# Reporting
+reports:
+  formats:
+    - markdown
+    - json
+  output_dir: "./link-reports"
+  include_ignored: false
+  group_by: "file"
+
+# Ignore patterns
+ignore:
+  file: ".doctorignore"
+  inline_comments: true
+  localhost: true
+  private_ips: true

@@ -1,0 +1,28 @@
+# DocLink Doctor Ignore Patterns
+
+# Local development
+localhost
+127.0.0.1
+0.0.0.0
+*.local
+
+# Placeholders and TODOs
+*example.com/placeholder*
+*TODO*
+*FIXME*
+
+# Internal networks
+*.internal.company.com
+*.corp
+10.*.*.*
+192.168.*.*
+
+# Specific URLs to ignore
+# https://known-flaky-site.com/*
+
+# Regex patterns (prefix with regex:)
+# regex:https://api\.example\.com/v\d+/.*
+
+# Ignore by file path
+# docs/draft/**
+# *.draft.md
